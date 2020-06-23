@@ -20,13 +20,13 @@ SECTIONS {
   /* code segment */
   .text.init 0 : { 
     FILL(0);
-    . = 0x100 - 12;
+    . = 0xF00 - 12;
     SIM_EXIT = .;
     LONG(0x13);
     SIM_STOP = .;
     LONG(0x6F);
     LONG(-1);
-    . = 0x100;
+    . = 0xF00;
     PROVIDE(__TEXT_START__ = .);
     *(.text.init) 
   } >RAM
